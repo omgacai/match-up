@@ -72,7 +72,7 @@
             display: none; /* Hide radio buttons */
         }
 
-        button {
+        button[type="submit"] {
             width: 20%;
             padding: 10px;
             margin: 0 40%;
@@ -84,8 +84,22 @@
             cursor: pointer;
             margin-top: 15px;
         }
-        button:hover {
+        button[type="submit"]:hover {
             background: #5c2b87;
+        }
+
+        button[type="cancel"] {
+            width: 20%;
+            padding: 10px;
+            margin-right: auto;
+            background: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            align-items: left;
+            justify-content: left;
+            display: flex;
         }
 
         @media screen and (min-width: 1024px) {
@@ -102,6 +116,10 @@
 </head>
 <body>
     <div class="container">
+        <button type="cancel">
+            <img src="close.png" width= 15% alt="Button Image" />
+        </button>
+
         <h2>Add Your Listing</h2> <hr>
         <form>
             <label for="sport">Sports Name</label>
