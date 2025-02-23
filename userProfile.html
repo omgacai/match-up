@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #5c2b87;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            color: #744c97;
+        }
+
+        hr {
+            border-top: 0.5px solid #744c97;
+        }
+
+        #profile-picture {
+            width: 100px;
+            height: 100px;
+            align-self: center;
+        }
+
+        #stars {
+            display: flex;
+            justify-content: center; 
+            color: gold;
+        }
+
+        .sports-list {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .sports-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sports-list li {
+            background-color: #e1dfdfc4;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .description {
+            margin-top: 10px;
+            text-align: left;
+            padding: 10px;
+            background-color: #e1dfdfc4;
+            border-radius: 5px;
+            line-height: 1.5;
+        }
+
+        button[type="edit"] {
+            width: 40%;
+            padding: 10px;
+            background: #744c97;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button[type="edit"]:hover {
+            background: #5c2b87;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .container {
+                width: 50%;
+                padding: 30px;
+            }
+            body {
+                background-color: #e0e0e0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="profile_picture.jpg" alt="Profile Picture" id="profile-picture">
+        <h2>@janedoe</h2>
+
+        <div id="stars">
+            ★ ★ ★ ★ ★
+        </div>
+        
+        <hr>
+
+        <div class="sports-list">
+            <h3>Sports</h3>
+            <ul>
+                <li>Tennis</li>
+                <li>Badminton</li>
+                <li>Soccer</li>
+                <li>Basketball</li>
+            </ul>
+        </div>
+
+        <h3>About Me</h3>
+        <div class="description">
+            <p>I'm an avid sports enthusiast who loves playing tennis, badminton, and soccer. Always looking for new people to play with!</p>
+        </div>
+
+        <button type="edit">Edit Profile</button>
+    </div>
+</body>
+</html>
