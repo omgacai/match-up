@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourites</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e1dfdfc4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5c2b87;
+        }
+
+        .sports-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sport-card {
+            background-color: white;
+            border-left: 5px solid #744c97;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .sport-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5c2b87;
+        }
+
+        .sport-details {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .highlight {
+            color: #744c97;
+            font-weight: bold;
+        }
+
+        .stars {
+            color: #f4c430;
+            font-size: 16px;
+        }
+
+        .unfavourite-btn {
+            background-color: #744c97;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .unfavourite-btn:hover {
+            background-color: #5c2b87;
+        }
+
+        .chat-btn {
+            background-color: #5c2b87;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+            justify-content: center;
+        }
+
+        .chat-btn:hover {
+            background-color: #744c97;
+        }
+
+        .chat-icon {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .more-btn {
+            background: none;
+            border: none;
+            color: #5c2b87;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hidden-details {
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        function unfavourite(event) {
+            const card = event.target.closest('.sport-card');
+            card.remove();
+        }
+
+        function joinChat(sportName) {
+            alert(`Joining chat for ${sportName}!`);
+        }
+
+        function toggleDetails(event) {
+            const button = event.target;
+            const details = button.parentElement.querySelector('.hidden-details');
+            
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                button.style.display = "none"; // Hide "More ⬇️"
+                
+                // Create and insert "Less ⬆️" button at the bottom
+                const lessBtn = document.createElement("button");
+                lessBtn.classList.add("more-btn");
+                lessBtn.innerHTML = "Less ⬆️";
+                lessBtn.onclick = function() {
+                    details.style.display = "none";
+                    lessBtn.remove();
+                    button.style.display = "flex"; // Show "More ⬇️" again
+                };
+                details.appendChild(lessBtn);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Favourited Listings</h1>
+        <ul class="sports-list">
+            <li class="sport-card">
+                <button class="unfavourite-btn" onclick="unfavourite(event)">Remove Favourites</button>
+                <div class="sport-title">Basketball</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> Community Center</p>
+                    <p><span class="highlight">Time:</span> 25/02/2025 17:00</p>
+                    <button class="more-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                    <div class="hidden-details">
+                        <p><span class="highlight">Players Needed:</span> 10</p>
+                        <p><span class="highlight">Cost:</span> Free</p>
+                        <p><span class="highlight">Experience Level:</span> <span class="stars">⭐⭐⭐⭐</span></p>
+                        <p><span class="highlight">Description / Additional Remarks:</span> Join a friendly game of basketball at the community center!</p>
+                    </div>
+                    <button class="chat-btn" onclick="joinChat('Basketball')">
+                        Join Chat <span class="chat-icon">➡️</span>
+                    </button>
+                </div>
+            </li>
+            <li class="sport-card">
+                <button class="unfavourite-btn" onclick="unfavourite(event)">Remove Favourites</button>
+                <div class="sport-title">Soccer</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> Local Park</p>
+                    <p><span class="highlight">Time:</span> 28/02/2025 18:30</p>
+                    <button class="more-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                    <div class="hidden-details">
+                        <p><span class="highlight">Players Needed:</span> 22</p>
+                        <p><span class="highlight">Cost:</span> $5 per player</p>
+                        <p><span class="highlight">Experience Level:</span> <span class="stars">⭐⭐</span></p>
+                        <p><span class="highlight">Description / Additional Remarks:</span> Casual soccer match open for all skill levels.</p>
+                    </div>
+                    <button class="chat-btn" onclick="joinChat('Soccer')">
+                        Join Chat <span class="chat-icon">➡️</span>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
