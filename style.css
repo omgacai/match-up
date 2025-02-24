@@ -1,0 +1,117 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Background Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('landing\ bgnd.jpg') no-repeat center center/cover;
+}
+
+
+/* Centered Login Box */
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    border: 2px solid #744c97; /* Purple border */
+}
+
+
+/* Title */
+h2 {
+    color: #5c2b87; /* Dark purple */
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Subtitle */
+p {
+    color: #744c97; /* Purple */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #744c97; /* Purple border */
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+    color: #333;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(116, 76, 151, 0.7); /* Lighter purple placeholder */
+}
+
+input:focus {
+    border-color: #5c2b87; /* Darker purple on focus */
+}
+.login-card {
+    background: rgba((255, 255, 255, 0.2));
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    border: 2px solid #ddd;
+    transition: transform 0.2s;
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #5c2b87; /* Dark purple */
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #744c97; /* Lighter purple on hover */
+}
+
+/* Links */
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    color: #5c2b87; /* Dark purple */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
