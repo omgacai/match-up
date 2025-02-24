@@ -11,7 +11,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin: 0;
         }
         .container {
@@ -40,26 +39,24 @@
         #profile-picture {
             width: 100px;
             height: 100px;
-            align-self: center;
         }
-
         #stars {
             display: flex;
             justify-content: center; 
             color: gold;
         }
 
-        .sports-list {
+        .my-sports {
             margin-top: 10px;
             text-align: center;
         }
 
-        .sports-list ul {
+        .my-sports ul {
             list-style: none;
             padding: 0;
         }
 
-        .sports-list li {
+        .my-sports li {
             background-color: #e1dfdfc4;
             padding: 8px;
             border-radius: 5px;
@@ -76,8 +73,40 @@
             line-height: 1.5;
         }
 
+        .sports-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sport-card {
+            background-color: #e1dfdfc4;
+            border-left: 5px solid #744c97;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .sport-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5c2b87;
+        }
+
+        .sport-details {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .highlight {
+            color: #744c97;
+            font-weight: bold;
+        }
+
         button[type="edit"] {
-            width: 40%;
+            width: 30%;
             padding: 10px;
             background: #744c97;
             color: white;
@@ -85,11 +114,23 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
+            margin: 20px;
         }
 
         button[type="edit"]:hover {
             background: #5c2b87;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #5c2b87;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 5px;
+            display: block;
+            text-align: left;
         }
 
         @media screen and (min-width: 1024px) {
@@ -114,7 +155,7 @@
         
         <hr>
 
-        <div class="sports-list">
+        <div class="my-sports">
             <h3>Sports</h3>
             <ul>
                 <li>Tennis</li>
@@ -130,6 +171,58 @@
         </div>
 
         <button type="edit">Edit Profile</button>
+
+        <hr>
+
+        <ul class="sports-list">
+            <li class="sport-card">
+                <div class="sport-title">Basketball 3v3</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> NUS Sports Hall</p>
+                    <p><span class="highlight">Time:</span> 25/02/2025 6:00 PM</p>
+                    <div class="extra-details">
+                        <p><span class="highlight">Players Needed:</span> 6</p>
+                        <p><span class="highlight">Cost:</span> Free</p>
+                        <p><span class="highlight">Experience Level:</span> ⭐⭐⭐</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                </div>
+                <button type="edit">Edit</button>
+                <button type="edit">Delete</button>
+
+            </li>
+            <li class="sport-card">
+                <div class="sport-title">Soccer Match</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> UTown Field</p>
+                    <p><span class="highlight">Time:</span> 25/02/2025 7:30 PM</p>
+                    <div class="extra-details">
+                        <p><span class="highlight">Players Needed:</span> 12</p>
+                        <p><span class="highlight">Cost:</span> Free</p>
+                        <p><span class="highlight">Experience Level:</span> ⭐⭐⭐⭐⭐</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                </div>
+                <button type="edit">Edit</button>
+                <button type="edit">Delete</button>
+            </li>
+        </ul>
+
     </div>
+
+    <script>
+        function toggleDetails(event) {
+            const button = event.target;
+            const details = button.previousElementSibling; // Gets the .extra-details div
+
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                button.innerText = "Less ⬆️";
+            } else {
+                details.style.display = "none";
+                button.innerText = "More ⬇️";
+            }
+        }
+    </script>
 </body>
 </html>
