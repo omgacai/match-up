@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Matches</title>
+    <link rel="stylesheet" href="exploreStyles.css">
+</head>
+<body>
+    <button class="profile-btn">My Profile</button>
+    <div class="container">
+        <h1>Explore Matches</h1>
+        <input type="text" class="search-bar" placeholder="Search matches...">
+        <ul class="sports-list">
+            <li class="sport-card">
+                <button class="fav-btn">Add to favourites</button>
+                <div class="sport-title">Basketball 3v3</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> NUS Sports Hall</p>
+                    <p><span class="highlight">Time:</span> 25/02/2025 6:00 PM</p>
+                    <div class="extra-details">
+                        <p><span class="highlight">Players Needed:</span> 6</p>
+                        <p><span class="highlight">Cost:</span> Free</p>
+                        <p><span class="highlight">Experience Level:</span> ⭐⭐⭐</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                </div>
+                <button class="chat-btn">Join Chat</button>
+            </li>
+            <li class="sport-card">
+                <button class="fav-btn">Add to favourites</button>
+                <div class="sport-title">Soccer Match</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> UTown Field</p>
+                    <p><span class="highlight">Time:</span> 25/02/2025 7:30 PM</p>
+                    <div class="extra-details">
+                        <p><span class="highlight">Players Needed:</span> 12</p>
+                        <p><span class="highlight">Cost:</span> Free</p>
+                        <p><span class="highlight">Experience Level:</span> ⭐⭐⭐⭐⭐</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                </div>
+                <button class="chat-btn">Join Chat</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleDetails(event) {
+            const button = event.target;
+            const details = button.previousElementSibling; // Gets the .extra-details div
+
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                button.innerText = "Less ⬆️";
+            } else {
+                details.style.display = "none";
+                button.innerText = "More ⬇️";
+            }
+        }
+    </script>
+</body>
+</html>
