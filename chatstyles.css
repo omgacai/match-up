@@ -106,10 +106,10 @@ header {
     /* Additional styling can be added here if needed */
 }
 
-.system-msg {
-    background: #e1dfdfc4;
-    color: #5c2b87;
-    align-self: flex-start;
+.jane-msg {
+    background: #744c97;  
+    color: white;         
+    align-self: flex-start; 
     text-align: left;
     font-weight: bold;
     padding: 8px 12px;
@@ -125,9 +125,16 @@ header {
 }
 
 .my-msg {
-    background: #5c2b87;
-    color: white;
+    background: #e1dfdfc4;
+    color: #5c2b87;
     align-self: flex-end;
+    text-align: left;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 70%;
+
 }
 
 .chat-input {
@@ -161,3 +168,4 @@ header {
 .chat-input button:hover {
     background: #5c2b87;
 }
+
