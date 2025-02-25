@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #5c2b87;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            color: #744c97;
+        }
+
+        hr {
+            border-top: 0.5px solid #744c97;
+        }
+
+        #profile-picture {
+            width: 100px;
+            height: 100px;
+        }
+        #stars {
+            display: flex;
+            justify-content: center; 
+            color: gold;
+        }
+
+        .my-sports {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .my-sports ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .my-sports li {
+            background-color: #e1dfdfc4;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .description {
+            margin-top: 10px;
+            text-align: left;
+            padding: 10px;
+            background-color: #e1dfdfc4;
+            border-radius: 5px;
+            line-height: 1.5;
+        }
+
+        .sports-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sport-card {
+            background-color: #e1dfdfc4;
+            border-left: 5px solid #744c97;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .sport-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5c2b87;
+        }
+
+        .sport-details {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .highlight {
+            color: #744c97;
+            font-weight: bold;
+        }
+
+        button[type="edit"] {
+            width: 30%;
+            padding: 10px;
+            background: #744c97;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        button[type="edit"]:hover {
+            background: #5c2b87;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #5c2b87;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 5px;
+            display: block;
+            text-align: left;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .container {
+                width: 50%;
+                padding: 30px;
+            }
+            body {
+                background-color: #e0e0e0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="profile_picture.jpg" alt="Profile Picture" id="profile-picture">
+        <h2>@janedoe</h2>
+
+        <div id="stars">
+            ★ ★ ★ ★ ★
+        </div>
+        
+        <hr>
+
+        <div class="my-sports">
+            <h3>Sports</h3>
+            <ul>
+                <li>Tennis</li>
+                <li>Badminton</li>
+                <li>Soccer</li>
+                <li>Basketball</li>
+            </ul>
+        </div>
+
+        <h3>About Me</h3>
+        <div class="description">
+            <p>I'm an avid sports enthusiast who loves playing tennis, badminton, and soccer. Always looking for new people to play with!</p>
+        </div>
+
+        <button type="edit">Edit Profile</button>
+
+        <hr>
+
+        <ul class="sports-list">
+            <li class="sport-card">
+                <div class="sport-title">Basketball 3v3</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> NUS Sports Hall</p>
+                    <p><span class="highlight">Time:</span> 25/02/2025 6:00 PM</p>
+                    <div class="extra-details">
+                        <p><span class="highlight">Players Needed:</span> 6</p>
+                        <p><span class="highlight">Cost:</span> Free</p>
+                        <p><span class="highlight">Experience Level:</span> ⭐⭐⭐</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                </div>
+                <button type="edit">Edit</button>
+                <button type="edit">Delete</button>
+
+            </li>
+            <li class="sport-card">
+                <div class="sport-title">Soccer Match</div>
+                <div class="sport-details">
+                    <p><span class="highlight">Location:</span> UTown Field</p>
+                    <p><span class="highlight">Time:</span> 25/02/2025 7:30 PM</p>
+                    <div class="extra-details">
+                        <p><span class="highlight">Players Needed:</span> 12</p>
+                        <p><span class="highlight">Cost:</span> Free</p>
+                        <p><span class="highlight">Experience Level:</span> ⭐⭐⭐⭐⭐</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
+                </div>
+                <button type="edit">Edit</button>
+                <button type="edit">Delete</button>
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        function toggleDetails(event) {
+            const button = event.target;
+            const details = button.previousElementSibling; // Gets the .extra-details div
+
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                button.innerText = "Less ⬆️";
+            } else {
+                details.style.display = "none";
+                button.innerText = "More ⬇️";
+            }
+        }
+    </script>
+</body>
+</html>
