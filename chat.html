@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI</title>
+    <link rel="stylesheet" href="chatstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        function updateChatRoom() {
+            var selectedRoom = document.getElementById("chatRoomSelect").value;
+            document.getElementById("current-room").innerText = selectedRoom;
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+        
+        <!-- Header -->
+        <header>
+            <h1>Chat Rooms</h1>
+            <div class="online-users">
+                <span>Online Users:</span>
+                <div class="user-avatar">😊</div>
+                <div class="user-avatar">😎</div>
+                <span class="user-count">2</span>
+            </div>
+        </header>
+
+        <!-- Dropdown for Joined Groups -->
+        <div class="discussion-bar">
+            <h2>Joined Groups</h2>
+            <select id="chatRoomSelect" class="dropdown" onchange="updateChatRoom()">
+                <option value="Tennis 2/10">Tennis 2/10</option>
+                <option value="Badminton 7/10">Badminton 7/10</option>
+                <option value="Floorball 11/10">Floorball 11/10</option>
+                <option value="Basketball 19/10">Basketball 19/10</option>
+                <option value="Frisbee 25/10">Frisbee 25/10</option>
+            </select>
+        </div>
+
+        <!-- Display Current Chat Room -->
+        <div class="current-room-display">
+            <h3>Current Chat Room: <span id="current-room">Tennis 2/10</span></h3>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-box">
+            <div class="message system-msg">Hello!</div>
+            <div class="message user-msg">What time are we meeting for tennis? 🤔</div>
+            <div class="message my-msg">I can't wait to see all of y'all! 🔥</div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input">
+            <input type="text" id="message" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
