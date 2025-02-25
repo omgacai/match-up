@@ -21,12 +21,6 @@
     </nav>
 
     <div class="filter-container">
-        <select id="sport-filter">
-            <option value="">All Sports</option>
-            <option value="Basketball">Basketball</option>
-            <option value="Soccer">Soccer</option>
-            <option value="Tennis">Tennis</option>
-        </select>
         <select id="location-filter">
             <option value="">All Locations</option>
             <option value="NUS Sports Hall">NUS Sports Hall</option>
@@ -46,13 +40,17 @@
             <option value="provided">Provided</option>
         </select>
         <button onclick="applyFilters()">Apply Filters</button>
+
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search Sport to join...">
+            <i class="search-icon">🔍</i>
+        </div> 
     </div>
 
-    <div class="search-container">
-        <input type="text" class="search-bar" placeholder="Search Sport to join...">
-        <i class="search-icon">🔍</i>
-    </div>
-    
+
+   
+
+
     
     <div class="container">
     
@@ -128,18 +126,16 @@
 
     <script>
         function applyFilters() {
-            const sport = document.getElementById('sport-filter').value;
             const location = document.getElementById('location-filter').value;
             const experience = document.getElementById('experience-filter').value;
             const equipment = document.getElementById('equipment-filter').value;
             
             document.querySelectorAll('.sport-card').forEach(card => {
-                const matchesSport = !sport || card.dataset.sport === sport;
                 const matchesLocation = !location || card.dataset.location === location;
                 const matchesExperience = !experience || card.dataset.experience === experience;
                 const matchesEquipment = !equipment || card.dataset.equipment === equipment;
                 
-                if (matchesSport && matchesLocation && matchesExperience && matchesEquipment) {
+                if (matchesLocation && matchesExperience && matchesEquipment) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
