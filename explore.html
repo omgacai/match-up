@@ -19,6 +19,35 @@
             <li><a href="#">My Profile</a></li>
         </ul>
     </nav>
+
+    <div class="filter-container">
+        <select id="sport-filter">
+            <option value="">All Sports</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Soccer">Soccer</option>
+            <option value="Tennis">Tennis</option>
+        </select>
+        <select id="location-filter">
+            <option value="">All Locations</option>
+            <option value="NUS Sports Hall">NUS Sports Hall</option>
+            <option value="UTown Field">UTown Field</option>
+        </select>
+        <select id="experience-filter">
+            <option value="">All Levels</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+        <select id="equipment-filter">
+            <option value="">All Equipment</option>
+            <option value="bring your own">Bring Your Own</option>
+            <option value="provided">Provided</option>
+        </select>
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
     <div class="search-container">
         <input type="text" class="search-bar" placeholder="Search Sport to join...">
         <i class="search-icon">🔍</i>
@@ -30,7 +59,7 @@
         <h1 class="explore-header">Explore Matches</h1>
         <hr>
         <ul class="sports-list">
-            <li class="sport-card">
+            <li class="sport-card" data-sport="Basketball" data-location="NUS Sports Hall" data-experience="3" data-equipment="bring your own">
                 <button class="fav-btn">Add to favourites</button>
                 <div class="sport-title">Basketball 3v3</div>
                 <div class="sport-details">
@@ -40,12 +69,13 @@
                         <p><span class="highlight">Players Needed:</span> 6</p>
                         <p><span class="highlight">Cost:</span> Free</p>
                         <p><span class="highlight">Experience Level:</span> ⭐⭐⭐</p>
+                        <p><span class="highlight">Equipment:</span> Bring Your Own</p>
                     </div>
                     <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
                 </div>
-                <button class="chat-btn">Join Chat</button>
+                <button class="chat-btn">Join Chat ➡️</button>
             </li>
-            <li class="sport-card">
+            <li class="sport-card", data-sport="Soccer" data-loaction="Utown Field" data-experience="5" data-equipment="provided">
                 <button class="fav-btn">Add to favourites</button>
                 <div class="sport-title">Soccer Match</div>
                 <div class="sport-details">
@@ -55,12 +85,13 @@
                         <p><span class="highlight">Players Needed:</span> 12</p>
                         <p><span class="highlight">Cost:</span> Free</p>
                         <p><span class="highlight">Experience Level:</span> ⭐⭐⭐⭐⭐</p>
+                        <p><span class="highlight">Equipment:</span> Provided</p>
                     </div>
                     <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
                 </div>
-                <button class="chat-btn">Join Chat</button>
+                <button class="chat-btn">Join Chat ➡️</button>
             </li>
-            <li class="sport-card">
+            <li class="sport-card" data-sport="Tennis" data-loaction="NUS Sports Hall" data-experience="3" data-equipment="Bring Your Own">
                 <button class="fav-btn">Add to favourites</button>
                 <div class="sport-title">Tennis singles</div>
                 <div class="sport-details">
@@ -70,12 +101,13 @@
                         <p><span class="highlight">Players Needed:</span> 6</p>
                         <p><span class="highlight">Cost:</span> Free</p>
                         <p><span class="highlight">Experience Level:</span> ⭐⭐⭐</p>
+                        <p><span class="highlight">Equipment:</span> Bring Your Own</p>
                     </div>
                     <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
                 </div>
-                <button class="chat-btn">Join Chat</button>
+                <button class="chat-btn">Join Chat ➡️</button>
             </li>
-            <li class="sport-card">
+            <li class="sport-card" data-sport="Tennis" data-loaction="NUS Sports Hall" data-experience="3" data-equipment="Bring Your Own">
                 <button class="fav-btn">Add to favourites</button>
                 <div class="sport-title">Tennis 2v2</div>
                 <div class="sport-details">
@@ -85,13 +117,36 @@
                         <p><span class="highlight">Players Needed:</span> 6</p>
                         <p><span class="highlight">Cost:</span> Free</p>
                         <p><span class="highlight">Experience Level:</span> ⭐⭐⭐</p>
+                        <p><span class="highlight">Equipment:</span> Bring Your Own</p>
                     </div>
                     <button class="toggle-btn" onclick="toggleDetails(event)">More ⬇️</button>
                 </div>
-                <button class="chat-btn">Join Chat</button>
+                <button class="chat-btn">Join Chat ➡️</button>
             </li>
         </ul>
     </div>
+
+    <script>
+        function applyFilters() {
+            const sport = document.getElementById('sport-filter').value;
+            const location = document.getElementById('location-filter').value;
+            const experience = document.getElementById('experience-filter').value;
+            const equipment = document.getElementById('equipment-filter').value;
+            
+            document.querySelectorAll('.sport-card').forEach(card => {
+                const matchesSport = !sport || card.dataset.sport === sport;
+                const matchesLocation = !location || card.dataset.location === location;
+                const matchesExperience = !experience || card.dataset.experience === experience;
+                const matchesEquipment = !equipment || card.dataset.equipment === equipment;
+                
+                if (matchesSport && matchesLocation && matchesExperience && matchesEquipment) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
     <script>
         function toggleDetails(event) {
