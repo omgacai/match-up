@@ -11,7 +11,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin: 0;
         }
         .container {
@@ -104,7 +103,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 15px;
+            margin-top: 0px;
             align-items: left;
             justify-content: left;
             display: flex;
@@ -154,6 +153,12 @@
                 <input type="radio" id="star5" name="experience" value="5"><label for="star5">★</label>
                 
             </div>
+            <label>Equipment (e.g racket, ball)</label>
+            <select id="equipment" name="equipment">
+                <option value="provided">-- Select --</option>
+                <option value="provided">Provided</option>
+                <option value="byo">Bring your own</option>
+              </select>
 
             <label for="description">Description / Additional Remarks</label>
             <textarea id="description" name="description" rows="4" placeholder="e.g Equipment to bring: Racket"></textarea>

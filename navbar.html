@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Up - Navigation</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        /* nav bar styles */
+        .navbar {
+            background-color: #744c97; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-family:'Roboto', sans-serif;
+        }
+
+        /* Left Side (Company Name) */
+        .navbar .logo {
+            font-size: 24px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Space between logo & button */
+        }
+
+
+        /* Right Side (Navigation Links) */
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px; /* Spacing between links */
+            margin-right: 20px;
+        }
+
+        .navbar .nav-links li {
+            display: inline;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #ddd; /* Lighter color on hover */
+        }
+
+        .list-button {
+            background-color: #3c9c65; /* Green button */
+            color: white; /* White text */
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hover effect */
+        .list-button:hover {
+            background-color: #2f7f50;
+            transform: scale(1.05); /* Slight pop effect */
+        }
+
+/* Click effect */
+.list-button:active {
+    transform: scale(0.95);
+}
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .navbar .nav-links {
+                margin-top: 10px;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Left Side -->
+        <div class="nav-left">
+            <div class="logo">MatchUp</div>
+            <button class="list-button">Add new listing</button>
+
+        </div>
+
+        <!-- Right Side -->
+        <ul class="nav-links">
+            <li><a href="#">Favourites</a></li>
+            <li><a href="#">Chats</a></li>
+            <li><a href="#">My Profile</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

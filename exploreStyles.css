@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #dfe1dfc4;
+    background-color: #e1dfdfc4;
     margin: 0;
     text-align: left;
 }
@@ -188,30 +188,6 @@ h1 {
 }
 
 
-/* nav bar styles */
-.navbar {
-    background-color: #744c97; 
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    font-family:'Roboto', sans-serif;
-}
-
-/* Left Side (Company Name) */
-.navbar .logo {
-    font-size: 24px;
-    margin-left: 20px;
-    font-weight: bold;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 25px; /* Space between logo & button */
-}
-
 .list-button {
     background-color: #3c9c65; /* Green button */
     color: white; /* White text */
@@ -234,6 +210,31 @@ h1 {
 /* Click effect */
 .list-button:active {
     transform: scale(0.95);
+}
+
+
+/* nav bar styles */
+.navbar {
+    background-color: #744c97; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-family:'Roboto', sans-serif;
+}
+
+/* Left Side (Company Name) */
+.navbar .logo {
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Space between logo & button */
 }
 
 

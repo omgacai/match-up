@@ -1,64 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listing Added</title>
-    <style>
-        body {
-            font-family: roboto, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listing Added</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e1dfdfc4;
+      margin: 0;
+    }
 
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
+    /* Navigation Bar */
+    .navbar {
+      background-color: #744c97; 
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
 
-        h1 {
-            color: #744c97;
-            font-size: 36px;
-        }
+    .navbar .logo {
+      font-size: 24px;
+      margin-left: 20px;
+      font-weight: bold;
+    }
 
-        .checkmark {
-            font-size: 100px;
-            color: #744c97;
-            margin: 10px 0;
-        }
+    .navbar .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin-right: 20px;
+    }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #744c97;
-            color: white;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-        button:hover {
-            background: #5c2b87;
-        }
+    .navbar .nav-links li {
+      display: inline;
+    }
 
-    </style>
+    .navbar .nav-links a {
+      text-decoration: none;
+      color: #ddd;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .navbar .nav-links a:hover {
+      color: #c0bfbf;
+    }
+
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 60px);
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .checkmark {
+      font-size: 100px;
+      color: #744c97;
+      margin: 10px 0;
+    }
+
+    h1 {
+      color: #744c97;
+      font-size: 36px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #744c97;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #5c2b87;
+    }
+
+    /* Responsive Design for Navbar */
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .navbar .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">MatchUp</div>
+
+    <ul class="nav-links">
+      <li><a href="#"><strong>Favourites</strong></a></li>
+      <li><a href="#">Chats</a></li>
+      <li><a href="#">My Profile</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
     <div class="container">
+      <div class="check-items">
         <div class="checkmark">✔</div>
         <h1>Listing Added!</h1>
         <p>Your listing has been successfully added.</p>
         <button onclick="window.location.href='index.html'">Return to Homepage</button>
+      </div>
     </div>
+  </div>
 </body>
 </html>
