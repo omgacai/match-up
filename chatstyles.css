@@ -30,7 +30,6 @@ header {
     align-items: center;
 }
 
-
 .online-users {
     display: flex;
     align-items: center;
@@ -49,19 +48,18 @@ header {
     font-weight: bold;
 }
 
-
 .discussion-bar {
     background: #744c97;
     padding: 6px;
     font-size: 14px;
     text-align: center;
-    color : white;
+    color: white;
 }
 
 .dropdown {
     width: 100%;
-    padding: 6px; 
-    font-size: 14px; 
+    padding: 6px;
+    font-size: 14px;
     border-radius: 5px;
     border: none;
     background: white;
@@ -71,32 +69,42 @@ header {
 
 .current-room-display {
     text-align: center;
-    padding: 6px; 
+    padding: 6px;
     background: #e1dfdfc4;
-    font-size: 14px; 
+    font-size: 14px;
     font-weight: bold;
     color: #5c2b87;
     border-bottom: 2px solid #5c2b87;
 }
 
-
 .chat-box {
-    flex-grow: 2; 
-    padding: 15px; 
+    flex-grow: 2;
+    padding: 15px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-
 .message {
-    max-width: 90%; 
-    padding: 8px; 
+    max-width: 90%;
+    padding: 8px;
     border-radius: 8px;
     font-size: 14px;
 }
 
+/* Style for the username displayed above each message */
+.message .username {
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: inherit;
+}
+
+/* The message content area */
+.message .message-content {
+    /* Additional styling can be added here if needed */
+}
 
 .system-msg {
     background: #e1dfdfc4;
@@ -104,7 +112,7 @@ header {
     align-self: flex-start;
     text-align: left;
     font-weight: bold;
-    padding: 8px 12px; 
+    padding: 8px 12px;
     border-radius: 10px;
     display: inline-block;
     max-width: 70%;
@@ -116,7 +124,6 @@ header {
     align-self: flex-start;
 }
 
-
 .my-msg {
     background: #5c2b87;
     color: white;
@@ -126,7 +133,7 @@ header {
 .chat-input {
     display: flex;
     background: #5c2b87;
-    padding: 6px; 
+    padding: 6px;
     gap: 8px;
     align-items: center;
 }
@@ -134,18 +141,17 @@ header {
 .chat-input input {
     flex-grow: 1;
     border: none;
-    padding: 8px; 
+    padding: 8px;
     border-radius: 5px;
     outline: none;
     font-size: 14px;
 }
 
-
 .chat-input button {
     background: #744c97;
     color: white;
     border: none;
-    padding: 6px 10px; 
+    padding: 6px 10px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
