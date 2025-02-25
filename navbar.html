@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Up - Navigation</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #744c97; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Left Side (Company Name) */
+        .navbar .logo {
+            font-size: 24px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        /* Right Side (Navigation Links) */
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px; /* Spacing between links */
+            margin-right: 20px;
+        }
+
+        .navbar .nav-links li {
+            display: inline;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #ddd; /* Lighter color on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .navbar .nav-links {
+                margin-top: 10px;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Left Side -->
+        <div class="logo">MatchUp</div>
+
+        <!-- Right Side -->
+        <ul class="nav-links">
+            <li><a href="#">Favourites</a></li>
+            <li><a href="#">Chats</a></li>
+            <li><a href="#">My Profile</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
