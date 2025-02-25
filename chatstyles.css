@@ -161,3 +161,24 @@ header {
     background: #5c2b87;
 }
 
+.btn-container {
+    background: #5c2b87;
+
+}
+
+button[type="cancel"] {
+    background: #5c2b87;
+    width: 25%;
+    margin-right: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px 5px 0px;
+    align-items: left;
+    justify-content: left;
+    display: flex;
+}
+
+img {
+    filter: brightness(0) invert(1);
+}
