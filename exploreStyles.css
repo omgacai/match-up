@@ -2,13 +2,11 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #e1dfdfc4;
     margin: 0;
-    padding: 20px;
     text-align: left;
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
+    margin: 50px 190px;
 }
 
 h1 {
@@ -16,17 +14,46 @@ h1 {
     text-align: center;
 }
 
-.search-bar {
+.search-container {
+    position: relative;
     width: 80%;
     max-width: 400px;
-    padding: 10px;
-    margin: 15px auto;
-    display: block;
+    margin: 30px auto; /* Centers it */
 }
 
+.search-bar {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Space for icon */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+}
+
+
+
+.explore-header {
+    align-items: left;
+    align-content: left;
+    justify-content: left;
+    display: flex;
+}
 .sports-list {
     list-style: none;
-    padding: 0;
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    justify-content: center; /* Centers the items */
+    gap: 55px; /* Adds spacing between items */
+    padding: 0; /* Removes default padding */
 }
 
 .sport-card {
@@ -37,6 +64,9 @@ h1 {
     border-radius: 8px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    width: calc(50% - 20px); /* Makes each card take 50% of the container width minus gap */
+    max-width: 500px; /* Prevents it from becoming too wide */
+    box-sizing: border-box; /* Ensures padding doesn’t add extra width */
 }
 
 .fav-btn {
@@ -107,20 +137,59 @@ h1 {
     display: block;
     text-align: left;
 }
-/* My Profile Button */
-.profile-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: #5c2b87;
+
+
+/* nav bar styles */
+.navbar {
+    background-color: #744c97; 
     color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-family:'Roboto', sans-serif;
 }
 
-.profile-btn:hover {
-    background-color: #744c97;
+/* Left Side (Company Name) */
+.navbar .logo {
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Right Side (Navigation Links) */
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Spacing between links */
+    margin-right: 20px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #ddd; /* Lighter color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
 }

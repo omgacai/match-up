@@ -9,22 +9,25 @@
             font-family: 'Roboto', sans-serif;
             background-color: #e1dfdfc4;
             margin: 0;
-            padding: 20px;
+            
         }
 
         .container {
-            max-width: 800px;
-            margin: auto;
+            margin: 50px 150px;
+
         }
 
         h1 {
             text-align: center;
             color: #5c2b87;
         }
-
         .sports-list {
             list-style: none;
-            padding: 0;
+            display: flex; /* Enables flexbox */
+            flex-wrap: wrap; /* Allows wrapping to the next line */
+            justify-content: center; /* Centers the items */
+            gap: 50px; /* Adds spacing between items */
+            padding: 0; /* Removes default padding */
         }
 
         .sport-card {
@@ -35,7 +38,11 @@
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             position: relative;
+            width: calc(50% - 20px); /* Makes each card take 50% of the container width minus gap */
+            max-width: 500px; /* Prevents it from becoming too wide */
+            box-sizing: border-box; /* Ensures padding doesn’t add extra width */
         }
+
 
         .sport-title {
             font-size: 20px;
@@ -119,6 +126,62 @@
             display: none;
             margin-top: 5px;
         }
+
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #744c97; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-family:'Roboto', sans-serif;
+        }
+
+        /* Left Side (Company Name) */
+        .navbar .logo {
+            font-size: 24px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        /* Right Side (Navigation Links) */
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px; /* Spacing between links */
+            margin-right: 20px;
+        }
+
+        .navbar .nav-links li {
+            display: inline;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #ddd; /* Lighter color on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .navbar .nav-links {
+                margin-top: 10px;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
     <script>
         function unfavourite(event) {
@@ -153,9 +216,21 @@
     </script>
 </head>
 <body>
+    <nav class="navbar">
+        <!-- Left Side -->
+        <div class="logo">MatchUp</div>
+
+        <!-- Right Side -->
+        <ul class="nav-links">
+            <li><a href="#">Favourites</a></li>
+            <li><a href="#">Chats</a></li>
+            <li><a href="#">My Profile</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <h1>Favourited Listings</h1>
+        <hr>
         <ul class="sports-list">
             <li class="sport-card">
                 <button class="unfavourite-btn" onclick="unfavourite(event)">Remove Favourites</button>
