@@ -147,7 +147,7 @@ header {
 
 
 .chat-input button {
-    background: #744c97;
+    background: #3c9c65;
     color: white;
     border: none;
     padding: 6px 10px; 
@@ -158,7 +158,7 @@ header {
 }
 
 .chat-input button:hover {
-    background: #5c2b87;
+    background: rgb(45, 111, 73);
 }
 
 .btn-container {

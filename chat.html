@@ -11,24 +11,66 @@
       var selectedRoom = document.getElementById("chatRoomSelect").value;
       document.getElementById("current-room").innerText = selectedRoom;
     }
+
+    function kickUser() {
+      var userSelect = document.getElementById("userSelect");
+      var selectedUser = userSelect.value;
+      if (selectedUser !== "users") {
+        alert(selectedUser + " has been kicked out!");
+        userSelect.remove(userSelect.selectedIndex);
+        document.getElementById("kickButton").style.display = "none";
+      }
+    }
+
+    function toggleKickButton() {
+      var userSelect = document.getElementById("userSelect");
+      var kickButton = document.getElementById("kickButton");
+      kickButton.style.display = userSelect.value !== "users" ? "inline-block" : "none";
+    }
   </script>
+  <style>
+
+    /*kick styles*/
+    .user-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #kickButton {
+      display: none;
+      background: rgb(239, 33, 33);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
+    #kickButton:hover {
+      background: rgb(171, 24, 24);
+    }
+  </style>
 </head>
 <body>
   <!-- Chat Container -->
   <div class="chat-container">
     <div class="btn-container">
       <button type="cancel">
-        <img src="close.png" width= 15% alt="Button Image" />
+        <img src="close.png" width=15% alt="Button Image" />
       </button>
     </div>
     <!-- Header -->
     <header>
       <h1>Chat Rooms</h1>
-      <div class="online-users">
-        <span>Online Users:</span>
-        <div class="user-avatar">😊</div>
-        <div class="user-avatar">😎</div>
-        <span class="user-count">2</span>
+      <!-- Custom Dropdown for Users -->
+      <div class="user-dropdown">
+        <select id="userSelect" class="dropdown" onchange="toggleKickButton()">
+          <option value="users">Users 3/10</option>
+          <option value="Jane">Jane</option>
+          <option value="Alice">Alice</option>
+          <option value="You">You (Admin)</option>
+        </select>
+        <button id="kickButton" onclick="kickUser()">Kick</button>
       </div>
     </header>
 
@@ -36,7 +78,7 @@
     <div class="discussion-bar">
       <h2>Joined Groups</h2>
       <select id="chatRoomSelect" class="dropdown" onchange="updateChatRoom()">
-        <option value="Tennis 2/10">Tennis 2/10</option>
+        <option value="Tennis 2/10">Tennis 3/10</option>
         <option value="Badminton 7/10">Badminton 7/10</option>
         <option value="Floorball 11/10">Floorball 11/10</option>
         <option value="Basketball 19/10">Basketball 19/10</option>
@@ -46,7 +88,7 @@
 
     <!-- Display Current Chat Room -->
     <div class="current-room-display">
-      <h3>Current Chat Room: <span id="current-room">Tennis 2/10</span></h3>
+      <h3>Current Chat Room: <span id="current-room">Tennis</span></h3>
     </div>
 
     <!-- Chat Messages -->
@@ -73,5 +115,3 @@
   </div>
 </body>
 </html>
-
-
