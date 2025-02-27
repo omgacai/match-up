@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchUp - Landing Page</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url('landing bgnd.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+        .navbar {
+            background-color: #744c97;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .description {
+            font-size: 24px;
+            color: #5c2b87;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .how-it-works {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .how-it-works h3 {
+            color: #5c2b87;
+        }
+        .how-it-works ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .how-it-works li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .join-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #5c2b87;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .join-btn:hover {
+            background-color: #744c97;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">MatchUp</div>
+        <div>
+            <a href="#">Favourites</a>
+            <a href="#">Chats</a>
+            <a href="#">My Profile</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="description">Join a chat, MatchUp and Have fun!</div>
+        <div class="how-it-works">
+            <h3>How It Works</h3>
+            <ul>
+                <li>📍 Find and join local sports matches.</li>
+                <li>💬 Chat with other players and plan your game.</li>
+                <li>🏆 Match up, play, and have fun!</li>
+            </ul>
+        </div>
+        <button class="join-btn">Join in the Fun!</button>
+    </div>
+</body>
+</html>

@@ -9,15 +9,52 @@
 /* Background Styling */
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
-    background: url('landing\ bgnd.jpg') no-repeat center center/cover;
+    background: url('landing bgnd.jpg') no-repeat center center/cover;
 }
 
+/* Navigation Bar */
+.navbar {
+    background-color: #744c97;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 16px;
+}
+.navbar a:hover {
+    text-decoration: underline;
+}
 
 /* Centered Login Box */
-.container {
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.login-card {
     background: white;
     padding: 2rem;
     border-radius: 12px;
@@ -27,7 +64,6 @@ body {
     max-width: 350px;
     border: 2px solid #744c97; /* Purple border */
 }
-
 
 /* Title */
 h2 {
@@ -68,17 +104,6 @@ input::placeholder {
 
 input:focus {
     border-color: #5c2b87; /* Darker purple on focus */
-}
-.login-card {
-    background: rgba((255, 255, 255, 0.2));
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    width: 100%;
-    border: 2px solid #ddd;
-    transition: transform 0.2s;
 }
 
 /* Login Button */
